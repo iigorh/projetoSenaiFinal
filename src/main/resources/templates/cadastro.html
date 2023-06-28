@@ -18,7 +18,9 @@
 
 
 
-	<form method="POST" action="/cadastro">
+	<form action="#" th:action="@{cadastrarDespesa}" th:object="${despesas}" method="POST"
+			style="margin: 30px auto; width: 300px; padding: 10px 20px"
+			>
 	
 <!-- Inicio campo nome da despesa -->	
 		<div class="mb-3">

@@ -38,7 +38,6 @@ public class Despesas {
 		this.valor = valor;
 		this.data = data;
 	}
-
 	
 //GETTERS AND SETTERS \/
 	
