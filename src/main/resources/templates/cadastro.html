@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
+	
+<link rel="stylesheet" href="css/style.css">
+	
+	<title>Cadastro de despesa</title>
+</head>
+<body>
+	<h1>Cadastro de Despesas</h1>
+
+
+
+	<form method="POST" action="/cadastro">
+	
+<!-- Inicio campo nome da despesa -->	
+		<div class="mb-3">
+			<label for="nomeDaDespesa" class="form-label">Nome da despesa: </label>
+			 <input type="text" class="form-control" name="nome"> 
+		</div>	 
+<!-- Fim campo nome da despesa -->		
+				
+				
+				
+<!-- Inicio campo categoria da despesa -->
+			<label for="categoria">Selecione a categoria da despesa:</label>
+			
+			<select class="form-select" name="categoria">
+				<option selected>Selecione a categoria da despesa</option>
+				<option value="1">Alimentação</option>
+				<option value="2">Transporte</option>
+				<option value="3">Lazer</option>
+				<option value="4">Saúde e Higiene</option>
+				<option value="5">Educação</option>
+				<option value="6">Vestuário</option>
+				<option value="7">Domésticos</option>
+				<option value="8">Investimentos</option>
+			</select>
+<!-- Fim campo categoria da despesa  -->
+
+
+<!-- Inicio campo valor da despesa -->
+			<div class="mb-3">
+				<label for="valorDespesa" class="form-label">Valor da Despesa:</label>
+				<input type="number" class="form-control" name="valor">
+			</div>
+<!-- Fim campo valor da despesa -->			
+			 
+			
+<!-- Inicio campo data da despesa -->			
+			<div class="mb-3">
+				<label for="dataDespesa" class="form-label">Data da Despesa:</label>
+				<input type="text" class="form-control" name="data">
+			</div>
+<!-- Fim campo data da despesa -->			
+			
+		
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+			
+	</form>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+</html>

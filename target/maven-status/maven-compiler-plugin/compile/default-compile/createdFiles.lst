@@ -1,0 +1,3 @@
+br\com\igor\projetosenai\ProjetosenaiApplication.class
+br\com\igor\projetosenai\controller\DespesasController.class
+br\com\igor\projetosenai\model\Despesas.class
