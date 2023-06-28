@@ -2,6 +2,8 @@ package br.com.igor.projetosenai.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +25,9 @@ public class Despesas {
 	private String nome;
 	private String categoria;
 	private double valor;
+	
+	//para ler no formato br de data
+	@DateTimeFormat(pattern = "dd/MM/yyy")
 	private Date data;
 //
 	

@@ -2,3 +2,8 @@ body{
 	
 	padding:200px;
 }
+
+.botaoCadastrar {
+  background-color: #8000ff;
+  color: #fff;
+}

@@ -55,7 +55,7 @@ public class DespesasController {
 			return "/cadastro.html";
 		}
 			repositorio.save(despesas);
-			return "redirect:/lista";
+			return "redirect:/despesa";
 	}
 //	
 	
