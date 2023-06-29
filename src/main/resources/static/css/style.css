@@ -1,9 +1,71 @@
-body{
-	
-	padding:200px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.botaoCadastrar {
-  background-color: #8000ff;
-  color: #fff;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.1);
 }
+
+.botaoP{
+	display:flex;
+	justify-content: center;
+	align-itens: center;	
+}
+
+.esquerda{
+	width: 50vw;
+	height:100vw;
+	display: flex;
+	justify-content: center;
+	allign-itens: center;
+	flex-direction: column;
+}
+
+.titulo{
+ position: relative;
+ left: 300px;
+ bottom: 185px;
+}
+
+/* container aonde está a lista */
+.container {
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  background: white;
+}
+
+
+.cabecalhoTabela {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 17px;
+}
+
+
+.divTable {
+  padding: 10px;
+  width: auto; 
+  height:inherit; 
+  overflow:auto;
+}
+
+
+table {
+  width: 90%;
+  border-spacing: 10px;
+}
+  
+ 

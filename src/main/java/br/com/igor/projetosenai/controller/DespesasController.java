@@ -26,6 +26,7 @@ import br.com.igor.projetosenai.repository.DespesaRepository;
 
 
 
+
 //ESTA CLASSE É A RESPONSÁVEL POR GERENCIAR AS REQUISIÇÕES
 
 
@@ -34,12 +35,20 @@ public class DespesasController {
 	
 //OBJETO C OPERAÇÕES PARA MANIPULAR OS DADOS NO BD
 	
-	//essa anotação cria o objeto e injeta no atributo e cuida dele 'repositorio'
+//essa anotação cria o objeto e injeta no atributo e cuida dele 'repositorio'
 	@Autowired
 	private DespesaRepository repositorio;
+
+	// pagina inicial
+		@GetMapping("/inicio")
+		public String paginaInicial() {
+			return "index.html";
+		}
 	
 	
-	// pagina de lista
+	
+	
+// pagina de lista
 	@GetMapping("/lista")
 	public String listaDespesas() {
 		return "lista.html";
@@ -47,7 +56,7 @@ public class DespesasController {
 	
 	
 	
-	// pagina de cadastro
+// pagina de cadastro
 	@GetMapping("/cadastroDespesa")
 	public String cadastrar() {
 		return "cadastro.html";
@@ -91,10 +100,9 @@ public class DespesasController {
 			return "editar_despesa";
 		}
 		repositorio.save(despesas);
-		return "redirect:/despesa";
+		return "redirect:/listaDeDespesas";
 	}
 //
-	
 	
 	
 //metodo para salvar
@@ -120,10 +128,14 @@ public class DespesasController {
 	
 	
 //metodo para excluir
-	@DeleteMapping
-	public void excluir(Despesas despesas) {
-		repositorio.delete(despesas);
-		}
+	@GetMapping("/deletar/{id}")
+	public String deletarDespesa(
+			@PathVariable("id") long id, Model model) {
+		Despesas despesas = repositorio.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
+			repositorio.delete(despesas);
+		return "redirect:/listaDeDespesas";
+}
 //
 		
 
