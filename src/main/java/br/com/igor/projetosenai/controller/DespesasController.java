@@ -4,18 +4,23 @@ package br.com.igor.projetosenai.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import br.com.igor.projetosenai.model.Despesas;
 import br.com.igor.projetosenai.repository.DespesaRepository;
+
+
 
 
 
@@ -40,11 +45,14 @@ public class DespesasController {
 		return "lista.html";
 	}
 	
+	
+	
 	// pagina de cadastro
 	@GetMapping("/cadastroDespesa")
 	public String cadastrar() {
 		return "cadastro.html";
 	}
+	
 	
 	
 //metodo para cadastrar despesa	
@@ -55,20 +63,37 @@ public class DespesasController {
 			return "/cadastro.html";
 		}
 			repositorio.save(despesas);
-			return "redirect:/despesa";
+			return "redirect:/listaDeDespesas";
 	}
 //	
 	
 		
-//metodo de consultar/listar despesas
-	@GetMapping("/despesa")
+		
+		
+//metodo p listar despesas
+	@GetMapping("/listaDeDespesas")
 	public String listaDesepesas(Model model) {
 		List<Despesas> despesas = repositorio.findAll();
 		model.addAttribute("despesas", despesas);
 		return "lista";
 	}
 //
+
 	
+	
+//metodo atualizar
+	@PostMapping("/atualizar/{id}")
+	public String atualizaDespesao(@PathVariable("id")
+	 long id, @Valid Despesas despesas, BindingResult result, Model model
+			) {
+		if(result.hasErrors()) {
+			despesas.setId(id);
+			return "editar_despesa";
+		}
+		repositorio.save(despesas);
+		return "redirect:/despesa";
+	}
+//
 	
 	
 	
@@ -80,12 +105,16 @@ public class DespesasController {
 //
 	
 	
+	
 //metodo para editar
-	@PutMapping
-	public void editar(Despesas despesas) {
-		if(despesas.getId()>0)
-		repositorio.save(despesas);
-		}
+	@GetMapping("/editar/{id}")
+	public String editarDespesa(
+			@PathVariable ("id") long id, Model model) {
+		Despesas despesas = repositorio.findById(id)
+			.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
+			model.addAttribute("despesas", despesas);
+		return "editar_despesa";
+	}
 //	
 	
 	

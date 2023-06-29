@@ -18,14 +18,16 @@
 
 
 
-	<form action="#" th:action="@{cadastrarDespesa}" th:object="${despesas}" method="POST"
+	<form action="#" th:action="@{/atualizar/{id}(id=${despesas.id})}" 
+	th:object="${despesas}" method="POST"
 			style="margin: 30px auto; width: 300px; padding: 10px 20px"
 			>
 	
 <!-- Inicio campo nome da despesa -->	
 		<div class="mb-3">
 			<label for="nomeDaDespesa" class="form-label">Nome da despesa: </label>
-			 <input type="text" class="form-control" name="nome"> 
+			 <input type="text" class="form-control" name="nome" th:field="*{nome}"> 
+			 <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 		</div>	 
 <!-- Fim campo nome da despesa -->		
 				
@@ -33,9 +35,9 @@
 				
 <!-- Inicio campo categoria da despesa -->
 			<label for="categoria">Selecione a categoria da despesa:</label>
-			
-			<select class="form-select" name="categoria">
-				<option selected>Selecione a categoria da despesa</option>
+<!-- aqui a primeira option foi altrada pra 'value' pois precisa retornar o campo categoria do cadastro			 -->
+			<select class="form-select" name="categoria" th:field="*{categoria}">
+				<option value="#">Selecione a categoria da despesa</option>
 				<option value="Alimentação">Alimentação</option>
 				<option value="Transporte">Transporte</option>
 				<option value="Lazer">Lazer</option>
@@ -51,7 +53,8 @@
 <!-- Inicio campo valor da despesa -->
 			<div class="mb-3">
 				<label for="valorDespesa" class="form-label">Valor da Despesa:</label>
-				<input type="number" class="form-control" name="valor">
+				<input type="number" class="form-control" name="valor" th:field="*{valor}"> 
+			 <span th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span>
 			</div>
 <!-- Fim campo valor da despesa -->			
 			 
@@ -59,12 +62,13 @@
 <!-- Inicio campo data da despesa -->			
 			<div class="mb-3">
 				<label for="dataDespesa" class="form-label">Data da Despesa:</label>
-				<input type="text" class="form-control" name="data" >
+				<input type="text" class="form-control" name="data" th:field="*{data}"> 
+			 <span th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></span>
 			</div>
 <!-- Fim campo data da despesa -->			
 			
 		
-			<button type="submit" class="botaoCadastrar">Cadastrar</button>
+			<button type="submit" class="botaoCadastrar">Concluir</button>
 			
 	</form>
 

@@ -16,6 +16,7 @@
 </head>
 <body>
 
+	<a href="/cadastroDespesa" class="btn btn-primary">Cadastrar nova despesa</a>
 	<table class="table">
 		<thead>
 			<tr>
@@ -24,6 +25,7 @@
 				<th scope="col">Categoria de despesa</th>
 				<th scope="col">Valor da despesa</th>
 				<th scope="col">Data da despesa</th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		
@@ -35,6 +37,10 @@
         		<td th:text="${despesa.categoria}"></td>
         		<td th:text="${despesa.valor}"></td>
         		<td th:text="${{despesa.data}}"></td>
+        		<td>
+        			<a th:href="@{/editar/{id}(id=${despesa.id})}" href="#"
+								class="btn btn-primary">editar</a>
+        		</td>
 			</tr>
 		</tbody>
 	</table>
