@@ -8,64 +8,78 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0,0,0,0.1);
 }
 
-.botaoP{
-	display:flex;
-	justify-content: center;
-	align-itens: center;	
+.container{ 
+background-color: #f8f8f8;
+  border-radius: 50px;
+  padding: 20px;
+  margin-top: 150px;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  height: 400px; /* Ajuste a altura conforme necessário */
 }
 
-.esquerda{
-	width: 50vw;
-	height:100vw;
-	display: flex;
-	justify-content: center;
-	allign-itens: center;
-	flex-direction: column;
+.navbar{
+	position: fixed;
+ 
 }
 
-.titulo{
- position: relative;
- left: 300px;
- bottom: 185px;
-}
+/*.botaoP{*/
+/*	display:flex;*/
+/*	justify-content: center;*/
+/*	align-itens: center;	*/
+/*}*/
 
-/* container aonde est� a lista */
-.container {
-  width: 90%;
-  height: 80%;
-  border-radius: 10px;
-  background: white;
-}
+/*.esquerda{*/
+	
+/*	display: flex;*/
+/*	justify-content: center;*/
+/*	allign-itens: center;*/
+/*	flex-direction: column;*/
+/*}*/
 
+/*.titulo{*/
+/* position: relative;*/
+/* left: 300px;*/
+/* bottom: 185px;*/
+/*}*/
 
-.cabecalhoTabela {
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto 17px;
-}
-
-
-.divTable {
-  padding: 10px;
-  width: auto; 
-  height:inherit; 
-  overflow:auto;
-}
+/*.cabecalhoTabela {*/
+/*  min-height: 70px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*  margin: auto 17px;*/
+/*}*/
 
 
 table {
   width: 90%;
   border-spacing: 10px;
+  border-radius: 10px;
+  text-align: center;
+  }
+ 
+.valor[lang="pt=BR"]::before{
+	content: "R$ ";
 }
+
+.cadastrof{
+
+  width: 90%;
+  border-spacing: 10px;
+  border-radius: 10px;
+  text-align: center;
+    position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  
+}
+
   
  
