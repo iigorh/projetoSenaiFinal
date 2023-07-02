@@ -5,56 +5,62 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: #ededed;
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.1);
-}
-
-.container{ 
-background-color: #f8f8f8;
-  border-radius: 50px;
-  padding: 20px;
-  margin-top: 150px;
-  width: 80%; /* Ajuste a largura conforme necessário */
-  height: 400px; /* Ajuste a altura conforme necessário */
+  background-color: #252526;
 }
 
 .navbar{
 	position: fixed;
- 
+ 	background-color: #252526;
+ 	
 }
 
-/*.botaoP{*/
-/*	display:flex;*/
-/*	justify-content: center;*/
-/*	align-itens: center;	*/
-/*}*/
+.container{ 
+background-color:#252526;
+  border-radius: 50px;
+  padding: 40px;
+  margin-top: 150px;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  height: 450px; /* Ajuste a altura conforme necessário */
+  color: #fff;
+}
 
-/*.esquerda{*/
-	
-/*	display: flex;*/
-/*	justify-content: center;*/
-/*	allign-itens: center;*/
-/*	flex-direction: column;*/
-/*}*/
+/*formulario de cadastro*/
+.cadastrof{
+  border-radius: 50px;
+  text-align: left;
+  position: absolute;
+  top: 55%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background-color: #2d2d30;
+  
+}
 
-/*.titulo{*/
-/* position: relative;*/
-/* left: 300px;*/
-/* bottom: 185px;*/
-/*}*/
+.botaoCadastrar{
+	 background-color: #39ff14; 
+	  color: #FFF; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  cursor: pointer;
+  text-align: center; 
+}
 
-/*.cabecalhoTabela {*/
-/*  min-height: 70px;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: space-between;*/
-/*  margin: auto 17px;*/
-/*}*/
+
+.cabecalhoTabelaEditar {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 17px;
+}
 
 
 table {
@@ -68,18 +74,6 @@ table {
 	content: "R$ ";
 }
 
-.cadastrof{
-
-  width: 90%;
-  border-spacing: 10px;
-  border-radius: 10px;
-  text-align: center;
-    position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  
-}
 
   
  

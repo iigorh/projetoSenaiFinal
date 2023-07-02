@@ -15,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg bg-primary fixed-top">
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/inicio"><img src="https://images.emojiterra.com/google/android-12l/512px/1f4b2.png" width="50px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="/inicio">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/cadastroDespesa">Nova despesa</a>
@@ -43,8 +43,9 @@
 	
 	
 	<div class="container">
-	<div class="titulo">
-	<h1>Cadastro de Despesas</h1>
+	<div>
+	<h1>Nova despesa:</h1>
+	<h7>Preencha ao lado as informações de sua despesa,<br> caso preencha com algum erro, <br>poderá acessar a página de editar despesas no menu acima</h7>
 	</div>
 
 	<form class="cadastrof"   action="#" th:action="@{cadastrarDespesa}" th:object="${despesas}" method="POST"
@@ -61,16 +62,18 @@
 				
 				
 <!-- Inicio campo categoria da despesa -->
-			<label for="categoria">Selecione a categoria da despesa:</label>
+			<label for="categoria">Selecione a categoria:</label>
 			
 			<select class="form-select" name="categoria">
-				<option selected>Selecione a categoria da despesa</option>
+				
+				<option selected>Categoria</option>
 				<option value="Alimentação">Alimentação</option>
 				<option value="Transporte">Transporte</option>
 				<option value="Lazer">Lazer</option>
 				<option value="Saúde e Higiene">Saúde e Higiene</option>
 				<option value="Educação">Educação</option>
 				<option value="Vestuário">Vestuário</option>
+				<option value="Supérfluos">Supérfluos</option>
 				<option value="Domésticos">Domésticos</option>
 				<option value="Investimentos">Investimentos</option>
 			</select>
