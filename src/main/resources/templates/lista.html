@@ -76,7 +76,14 @@
 					<td th:text="${{despesa.data}}"></td>
 				</tr>
 			</tbody>
-			<!-- campo de seleção do tipo de categoria -->
+
+			<tfoot>
+				<tr>
+					<td colspan="3">Total:</td>
+					<td th:text="${valorTotal}"></td>
+					<td></td>
+				</tr>
+			</tfoot>
 
 		</table>
 

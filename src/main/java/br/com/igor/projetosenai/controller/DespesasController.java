@@ -49,16 +49,17 @@ public class DespesasController {
 
 //pagina da lista
 		@GetMapping("/lista")
-		public String listaDespesas() {
-			return "lista.html";
-		}	
-		
+		 public String listaDespesas(Model model) {
+	        List<Despesas> despesas = repositorio.findAll();
+	        model.addAttribute("despesas", despesas);
+
+	        // Calcular o valor total das despesas
+	        double valorTotal = despesas.stream().mapToDouble(Despesas::getValor).sum();
+	        model.addAttribute("valorTotal", valorTotal);
+
+	        return "lista";	
+		}		
 	
-// pagina de editar lista FAZENDO NADA
-	@GetMapping("/editarLista")
-	public String editarListaDespesas() {
-		return "editarLista.html";
-	}
 	
 	
 	
