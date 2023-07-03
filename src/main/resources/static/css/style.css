@@ -18,6 +18,7 @@ body {
 .navbar{
 	position: fixed;
  	background-color: #252526;
+ 	display: flex;
  	
 }
 
@@ -25,33 +26,78 @@ body {
 background-color:#252526;
   border-radius: 50px;
   padding: 40px;
-  margin-top: 150px;
-  width: 80%; /* Ajuste a largura conforme necessário */
-  height: 450px; /* Ajuste a altura conforme necessário */
+  margin-top: 250px;
+  width: 80%; 
+  height: 450px; 
   color: #fff;
 }
 
-/*formulario de cadastro*/
-.cadastrof{
+.containerLista{ 
+background-color:#2d2d30;
   border-radius: 50px;
-  text-align: left;
-  position: absolute;
-  top: 55%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  background-color: #2d2d30;
-  
+  padding: 40px;
+  margin-top: 300px;
+  width: 80%; 
+  height: 450px; 
+  color: #fff;
 }
 
-.botaoCadastrar{
-	 background-color: #39ff14; 
-	  color: #FFF; 
+.botaoCadastrar1{
+  background-color: #39ff14; 
+  color: #252526; 
   border-radius: 20px; 
   padding: 10px 20px; 
   border: none; 
   cursor: pointer;
   text-align: center; 
+  margin-top:100px;
+  font-weight: bold;
+  
 }
+
+
+
+/*formulario de cadastro*/
+.cadastrof{
+  border-radius: 30px;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background-color: #2d2d30;
+  width: 400px;
+  padding: 10px 20px;
+ 	
+  
+ 
+}
+
+.form-select option{
+	color: #2d2d30;
+}
+
+.botaoCadastrar{
+  background-color: #39ff14; 
+  color: #252526; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  text-align: center;
+  font-weight: bold; 
+}
+
+.botaocadastrar{
+	 background-color: #39ff14; 
+  color: #252526; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  text-align: center; 
+  font-weight: bold;
+}
+/*fim formulario de cadastro*/
+
 
 
 .cabecalhoTabelaEditar {
@@ -69,7 +115,7 @@ table {
   border-radius: 10px;
   text-align: center;
   }
- 
+  
 .valor[lang="pt=BR"]::before{
 	content: "R$ ";
 }

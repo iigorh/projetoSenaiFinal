@@ -25,13 +25,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link " aria-current="page" href="/inicio">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/cadastroDespesa">Nova despesa</a>
         </li>
+           <li>
+         <a class="nav-link" href="#">Visualisar Despesas</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="/listaDeDespesas">Editar despesas</a>
+          <a class="nav-link active" href="/listaDeDespesas">Editar despesas</a>
         </li>
         
         
@@ -43,16 +46,16 @@
 	</header>
 
 <body>
-	<div class="container">
+	<div class="containerLista">
 	<div class="cabecalhoTabelaEditar">
       <strong>Despesas registradas:</strong>
-      <a href="/cadastroDespesa" class="btn btn-primary">Cadastrar nova</a>
+     <strong><a href="/cadastroDespesa" class="botaoCadastrar">Cadastrar nova</a></strong> 
   
     </div>
 	
 	
 	
-	<table class="table table-hover">
+	<table class="table table-dark table-striped table-hover">
 		<thead>
 			<tr>
 				<th scope="col">id</th>
@@ -88,7 +91,7 @@
 		
 		
 	</table>
-
+	
 </div>
 <script src="https://kit.fontawesome.com/85e3e5acdc.js" crossorigin="anonymous"></script>
 </body>
