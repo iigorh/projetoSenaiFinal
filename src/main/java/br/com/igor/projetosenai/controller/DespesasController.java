@@ -39,19 +39,25 @@ public class DespesasController {
 	@Autowired
 	private DespesaRepository repositorio;
 
-	// pagina inicial
+	
+// pagina inicial
 		@GetMapping("/inicio")
 		public String paginaInicial() {
 			return "index.html";
 		}
+
+
+//pagina da lista
+		@GetMapping("/lista")
+		public String listaDespesas() {
+			return "lista.html";
+		}	
+		
 	
-	
-	
-	
-// pagina de lista
-	@GetMapping("/lista")
-	public String listaDespesas() {
-		return "lista.html";
+// pagina de editar lista FAZENDO NADA
+	@GetMapping("/editarLista")
+	public String editarListaDespesas() {
+		return "editarLista.html";
 	}
 	
 	
@@ -67,27 +73,26 @@ public class DespesasController {
 //metodo para cadastrar despesa	
 		@PostMapping("/cadastrarDespesa")
 		public String cadastraProduto(Despesas despesas,
-				BindingResult result, Model model) {
+				BindingResult result, Model model) 
+{
 			if(result.hasErrors()) {
 			return "/cadastro.html";
 		}
 			repositorio.save(despesas);
-			return "redirect:/listaDeDespesas";
+			return "redirect:/cadastroDespesa";
 	}
 //	
-	
 		
 		
 		
-//metodo p listar despesas
-	@GetMapping("/listaDeDespesas")
+//metodo p EDITAR listar despesas
+	@GetMapping("/editarListaDespesas")
 	public String listaDesepesas(Model model) {
 		List<Despesas> despesas = repositorio.findAll();
 		model.addAttribute("despesas", despesas);
-		return "lista";
+		return "editarLista";
 	}
 //
-
 	
 	
 //metodo atualizar
@@ -100,7 +105,7 @@ public class DespesasController {
 			return "editar_despesa";
 		}
 		repositorio.save(despesas);
-		return "redirect:/listaDeDespesas";
+		return "redirect:/editarListaDespesas";
 	}
 //
 	
@@ -134,7 +139,7 @@ public class DespesasController {
 		Despesas despesas = repositorio.findById(id)
 			.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
 			repositorio.delete(despesas);
-		return "redirect:/listaDeDespesas";
+		return "redirect:/editarListaDespesas";
 }
 //
 		
