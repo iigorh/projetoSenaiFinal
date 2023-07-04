@@ -35,74 +35,72 @@ public class DespesasController {
 	
 //OBJETO C OPERAÇÕES PARA MANIPULAR OS DADOS NO BD
 	
-//essa anotação cria o objeto e injeta no atributo e cuida dele 'repositorio'
+// essa anotação cria o objeto e injeta no atributo e cuida dele 'repositorio'
 	@Autowired
 	private DespesaRepository repositorio;
 
 	
-// pagina inicial
-		@GetMapping("/inicio")
-		public String paginaInicial() {
-			return "index.html";
+//	pagina inicial
+	@GetMapping("/inicio")
+	public String paginaInicial() {
+	return "index.html";
 		}
 
 
 //pagina da lista
-		@GetMapping("/lista")
-		 public String listaDespesas(Model model) {
-	        List<Despesas> despesas = repositorio.findAll();
-	        model.addAttribute("despesas", despesas);
-
-	        // Calcular o valor total das despesas
-	        double valorTotal = despesas.stream().mapToDouble(Despesas::getValor).sum();
-	        model.addAttribute("valorTotal", valorTotal);
-
-	        return "lista";	
+	@GetMapping("/lista")
+	public String listaDespesas(Model model) {
+	List<Despesas> despesas = repositorio.findAll();
+	model.addAttribute("despesas", despesas);
+// Calcular o valor total das despesas
+	double valorTotal = despesas.stream().mapToDouble(Despesas::getValor).sum();
+	model.addAttribute("valorTotal", valorTotal);
+	return "lista";	
 		}		
 	
 // pagina de cadastro
 	@GetMapping("/cadastroDespesa")
 	public String cadastrar() {
-		return "cadastro.html";
-	}
+	return "cadastro.html";
+		}
 	
 	
 	
 //metodo para cadastrar despesa	
-		@PostMapping("/cadastrarDespesa")
-		public String cadastraProduto(Despesas despesas,
-				BindingResult result, Model model) 
-{
-			if(result.hasErrors()) {
-			return "/cadastro.html";
+	@PostMapping("/cadastrarDespesa")
+	public String cadastraProduto(Despesas despesas,
+	BindingResult result, Model model) 
+		{
+	if(result.hasErrors()) {
+	return "/cadastro.html";
 		}
-			repositorio.save(despesas);
-			return "redirect:/cadastroDespesa";
+	repositorio.save(despesas);
+	return "redirect:/cadastroDespesa";
 	}
-//	
-				
+
+	
 		
 //metodo p EDITAR lista despesas
 	@GetMapping("/editarListaDespesas")
 	public String listaDesepesas(Model model) {
-		List<Despesas> despesas = repositorio.findAll();
-		model.addAttribute("despesas", despesas);
-		return "editarLista";
+	List<Despesas> despesas = repositorio.findAll();
+	model.addAttribute("despesas", despesas);
+	return "editarLista";
 	}
-//
+
 	
 	
 //metodo atualizar
 	@PostMapping("/atualizar/{id}")
 	public String atualizaDespesao(@PathVariable("id")
-	 long id, @Valid Despesas despesas, BindingResult result, Model model
-			) {
-		if(result.hasErrors()) {
-			despesas.setId(id);
-			return "editar_despesa";
+	long id, @Valid Despesas despesas, BindingResult result, Model model)
+		{
+	if(result.hasErrors()) {
+	despesas.setId(id);
+	return "editar_despesa";
 		}
-		repositorio.save(despesas);
-		return "redirect:/editarListaDespesas";
+	repositorio.save(despesas);
+	return "redirect:/editarListaDespesas";
 	}
 //
 	
@@ -110,7 +108,7 @@ public class DespesasController {
 //metodo para salvar
 	@PostMapping
 	public void salvar(Despesas despesas) {
-		repositorio.save(despesas);
+	repositorio.save(despesas);
 	}
 //
 	
@@ -119,11 +117,11 @@ public class DespesasController {
 //metodo para editar
 	@GetMapping("/editar/{id}")
 	public String editarDespesa(
-			@PathVariable ("id") long id, Model model) {
-		Despesas despesas = repositorio.findById(id)
-			.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
-			model.addAttribute("despesas", despesas);
-		return "editar_despesa";
+	@PathVariable ("id") long id, Model model) {
+	Despesas despesas = repositorio.findById(id)
+	.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
+	model.addAttribute("despesas", despesas);
+	return "editar_despesa";
 	}
 //	
 	
@@ -132,15 +130,12 @@ public class DespesasController {
 //metodo para excluir
 	@GetMapping("/deletar/{id}")
 	public String deletarDespesa(
-			@PathVariable("id") long id, Model model) {
-		Despesas despesas = repositorio.findById(id)
-			.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
-			repositorio.delete(despesas);
-		return "redirect:/editarListaDespesas";
+	@PathVariable("id") long id, Model model) {
+	Despesas despesas = repositorio.findById(id)
+	.orElseThrow(() -> new IllegalArgumentException("Identificador não é válido" + id));
+	repositorio.delete(despesas);
+	return "redirect:/editarListaDespesas";
 }
-//
-		
-
 
 	
 }
