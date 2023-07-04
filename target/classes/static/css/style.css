@@ -32,6 +32,7 @@ background-color:#252526;
   color: #fff;
 }
 
+
 .containerLista{ 
 background-color:#2d2d30;
   border-radius: 50px;
@@ -85,6 +86,7 @@ background-color:#2d2d30;
   border: none; 
   text-align: center;
   font-weight: bold; 
+  
 }
 
 .botaocadastrar{
@@ -116,9 +118,8 @@ table {
   text-align: center;
   }
   
-.valor[lang="pt=BR"]::before{
-	content: "R$ ";
-}
+
+
 
 
   

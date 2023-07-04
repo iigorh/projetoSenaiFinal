@@ -60,9 +60,6 @@ public class DespesasController {
 	        return "lista";	
 		}		
 	
-	
-	
-	
 // pagina de cadastro
 	@GetMapping("/cadastroDespesa")
 	public String cadastrar() {
@@ -83,10 +80,9 @@ public class DespesasController {
 			return "redirect:/cadastroDespesa";
 	}
 //	
+				
 		
-		
-		
-//metodo p EDITAR listar despesas
+//metodo p EDITAR lista despesas
 	@GetMapping("/editarListaDespesas")
 	public String listaDesepesas(Model model) {
 		List<Despesas> despesas = repositorio.findAll();
