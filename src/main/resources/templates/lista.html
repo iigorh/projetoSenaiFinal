@@ -61,7 +61,7 @@
 					<th scope="col">id</th>
 					<th scope="col">Nome da despesa</th>
 					<th scope="col">Categoria de despesa</th>
-					<th scope="col">Valor da despesa (R$)</th>
+					<th scope="col">Valor da despesa</th>
 					<th scope="col">Data da despesa</th>
 				</tr>
 			</thead>
@@ -70,7 +70,7 @@
 					<td th:text="${despesa.id}"></td>
 					<td th:text="${despesa.nome}"></td>
 					<td th:text="${despesa.categoria}"></td>
-					<td th:text="${despesa.valor}"></td>
+					<td th:text="'R$ ' + ${despesa.valor}"></td>
 					<td th:text="${{despesa.data}}"></td>
 				</tr>
 			</tbody>
@@ -78,7 +78,7 @@
 			<tfoot>
 				<tr>
 					<td colspan="3">Total:</td>
-					<td th:text="${valorTotal}"></td>
+					<td th:text="'R$ ' + ${valorTotal}"></td>
 					<td></td>
 				</tr>
 			</tfoot>
