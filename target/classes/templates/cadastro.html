@@ -66,15 +66,15 @@
 
 			<div class="mb-3">
 				<label for="nomeDaDespesa" class="form-label">Nome da
-					despesa: </label> <input type="text" class="form-control" name="nome">
+					despesa: </label> <input type="text" class="form-control" name="nome" required>
 			</div>
 
 			 <!-- campo de seleção do tipo de categoria --> 
 
 			<label for="categoria">Selecione a categoria:</label> <select
-				class="form-select" name="categoria">
+				class="form-select" name="categoria"  required>
 
-				<option selected>Categoria</option>
+				<option selected required></option>
 				<option value="Alimentação">Alimentação</option>
 				<option value="Transporte">Transporte</option>
 				<option value="Lazer">Lazer</option>
@@ -92,13 +92,13 @@
 			<div class="mb-3">
 				<label for="valorDespesa" class="form-label">Valor da
 					Despesa:</label> <input type="number" lang="pt-BR" placeholder="0.000,00"
-					class="form-control"  step="0.01" min="0.01" name="valor">
+					class="form-control"  step="0.01" min="0.01" name="valor" required>
 			</div>
 			
 
 			<div class="mb-3">
 				<label for="dataDespesa" class="form-label">Data da Despesa:</label>
-				<input type="text" class="form-control" name="data">
+				<input type="text" class="form-control" name="data" required>
 			</div>
 			
 
